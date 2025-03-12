@@ -23,7 +23,7 @@ function LoginPage() {
     try {
       setIsLoading(true);
       const res = await axiosInstance.post(
-        "http://localhost:3000/api/auth/google",
+        `${import.meta.env.VITE_API_URL}/auth/google`,
         {
           code,
         }
@@ -52,7 +52,7 @@ function LoginPage() {
     setError("");
     try {
       const res = await axiosInstance.post(
-        "http://localhost:3000/api/auth/login",
+        `${import.meta.env.VITE_API_URL}/auth/google`,
         {
           email,
           password,
