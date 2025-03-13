@@ -9,7 +9,7 @@ const MessageBubble = ({ message, currentUserId }) => {
     <div
       className={`flex ${
         isSender ? "justify-end" : "justify-start"
-      } mb-4 h-full`}
+      } mb-[5rem] h-full`}
     >
       {!isSender && (
         <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center mr-2 flex-shrink-0 shadow-md">
@@ -67,8 +67,8 @@ const MessageBubble = ({ message, currentUserId }) => {
   );
 };
 
-const TypingIndicator = () => (
-  <div className="flex justify-start mb-[1.2rem]">
+const TypingIndicator = ({ isTyping }) => (
+  <div className={`flex justify-start ${isTyping ? "mb-[5rem]" : "mb-2"} `}>
     <div className="bg-gradient-to-r from-gray-800/80 to-gray-700/80 rounded-2xl p-3 shadow border border-gray-700/50">
       <div className="flex space-x-1.5">
         <div className="w-2.5 h-2.5 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-full animate-bounce"></div>

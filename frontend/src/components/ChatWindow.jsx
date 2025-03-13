@@ -187,8 +187,8 @@ function ChatWindow({ onClose }) {
               )
             )
           )}
-          {isTyping && <TypingIndicator />}
-          <div ref={messageEndRef} />
+          {isTyping && <TypingIndicator isTyping={isTyping} />}
+          <div ref={messageEndRef} className="my-[2rem]"/>
         </div>
       </div>
       <div className="p-4 border-t border-gray-200 dark:border-gray-700 fixed bottom-0 w-full bg-white dark:bg-gray-800">
