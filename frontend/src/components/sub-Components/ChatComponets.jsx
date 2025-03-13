@@ -64,7 +64,7 @@ const MessageBubble = ({ message, currentUserId }) => {
 };
 
 const TypingIndicator = () => (
-  <div className="flex justify-start">
+  <div className="flex justify-start mb-[1.2rem]">
     <div className="bg-gradient-to-r from-gray-800/80 to-gray-700/80 rounded-2xl p-3 shadow border border-gray-700/50">
       <div className="flex space-x-1.5">
         <div className="w-2.5 h-2.5 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-full animate-bounce"></div>
