@@ -48,7 +48,7 @@ const MessageBubble = ({ message, currentUserId }) => {
           {message.sender?.avatar ? (
             <img
               src={
-                message.sender.avatar ||
+                message?.sender?.avatar ||
                 `https://avatar.iran.liara.run/username?username=${message.sender.name}`
               }
               alt="Your avatar"

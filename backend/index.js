@@ -9,7 +9,8 @@ import userRouter from "./routes/userRoute.js";
 import messageRouter from "./routes/messageRoute.js";
 import path from "path";
 
-dotenv.config({ path: "./.env" });
+dotenv.config();
+// dotenv.config({ path: "./.env" });
 
 const app = express();
 const httpServer = createServer(app);
@@ -46,7 +47,7 @@ if (process.env.NODE_ENV === "production") {
   app.get("*", (req, res) =>
     res.sendFile(path.resolve(__dirname1, "frontend", "dist", "index.html"))
   );
-} else {
+} else if (process.env.NODE_ENV === "development") {
   app.get("/", (req, res) => {
     res.send("API is running..");
   });

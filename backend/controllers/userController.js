@@ -101,7 +101,6 @@ export const logout = asyncHandler(async (req, res) => {
 export const googleLogin = asyncHandler(async (req, res) => {
   try {
     const { code } = req.body;
-
     if (!code) {
       return res
         .status(400)
@@ -117,6 +116,9 @@ export const googleLogin = asyncHandler(async (req, res) => {
         headers: { Authorization: `Bearer ${tokens.access_token}` },
       }
     );
+
+    console.log("userInfoResponse", userInfoResponse.data);
+
     const { email, name, picture } = userInfoResponse.data;
 
     let user = await User.findOne({ email });

@@ -22,12 +22,9 @@ function LoginPage() {
     }
     try {
       setIsLoading(true);
-      const res = await axiosInstance.post(
-        `${import.meta.env.VITE_API_URL}/auth/google`,
-        {
-          code,
-        }
-      );
+      const res = await axiosInstance.post(`api/auth/google`, {
+        code,
+      });
       if (res.data && res.data.user) {
         dispatch(setCredential(res.data.user));
         navigate("/");
@@ -52,7 +49,7 @@ function LoginPage() {
     setError("");
     try {
       const res = await axiosInstance.post(
-        `${import.meta.env.VITE_API_URL}/auth/google`,
+        `api/auth/login`,
         {
           email,
           password,

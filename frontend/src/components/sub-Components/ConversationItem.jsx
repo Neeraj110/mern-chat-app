@@ -20,7 +20,7 @@ export const ConversationItem = ({ conversation, isSelected, onSelect }) => {
           <img
             src={
               conversation?.participants?.avatar ||
-              `https://avatar.iran.liara.run/username?username=${conversation?.participants?.avatar}`
+              `https://avatar.iran.liara.run/username?username=${conversation?.participants?.name}`
             }
             alt=""
             className="w-12 h-12 rounded-full border-2 border-gray-700"
