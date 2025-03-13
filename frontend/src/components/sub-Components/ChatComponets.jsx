@@ -6,7 +6,7 @@ const MessageBubble = ({ message, currentUserId }) => {
   const senderInitial = message.sender?.name?.charAt(0) || "U";
 
   return (
-    <div className={`flex ${isSender ? "justify-end" : "justify-start"} mb-4`}>
+    <div className={`flex ${isSender ? "justify-end" : "justify-start"} mb-4 h-full`}>
       {!isSender && (
         <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center mr-2 flex-shrink-0 shadow-md">
           {message.sender?.avatar ? (

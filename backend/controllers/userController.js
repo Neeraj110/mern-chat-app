@@ -117,8 +117,6 @@ export const googleLogin = asyncHandler(async (req, res) => {
       }
     );
 
-    console.log("userInfoResponse", userInfoResponse.data);
-
     const { email, name, picture } = userInfoResponse.data;
 
     let user = await User.findOne({ email });
