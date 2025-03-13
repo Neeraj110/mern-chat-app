@@ -191,7 +191,7 @@ function ChatWindow({ onClose }) {
           <div ref={messageEndRef} />
         </div>
       </div>
-      <div className="p-4 border-t border-gray-200 dark:border-gray-700">
+      <div className="p-4 border-t border-gray-200 dark:border-gray-700 fixed bottom-0 w-full bg-white dark:bg-gray-800">
         <form
           onSubmit={handleSendMessage}
           className="max-w-2xl md:max-w-3xl mx-auto"

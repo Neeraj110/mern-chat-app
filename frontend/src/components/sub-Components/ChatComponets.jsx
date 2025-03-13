@@ -6,7 +6,11 @@ const MessageBubble = ({ message, currentUserId }) => {
   const senderInitial = message.sender?.name?.charAt(0) || "U";
 
   return (
-    <div className={`flex ${isSender ? "justify-end" : "justify-start"} mb-4 h-full`}>
+    <div
+      className={`flex ${
+        isSender ? "justify-end" : "justify-start"
+      } mb-4 h-full`}
+    >
       {!isSender && (
         <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center mr-2 flex-shrink-0 shadow-md">
           {message.sender?.avatar ? (
@@ -83,7 +87,7 @@ const TypingIndicator = () => (
 
 const ChatHeader = ({ conversation, isOnline, onClose }) => {
   return (
-    <div className="bg-gradient-to-r from-gray-800 to-gray-900 border-b border-gray-700 px-4 py-3 flex items-center shadow-md sticky top-0 z-10">
+    <div className="bg-gradient-to-r from-gray-800 to-gray-900 border-b border-gray-700 px-4 py-3 flex items-center shadow-md fixed top-0 z-50 w-full">
       <button
         onClick={onClose}
         className="md:hidden p-2 mr-2 text-gray-400 hover:text-gray-200 bg-gray-800/50 hover:bg-gray-700/50 rounded-full transition-colors"
