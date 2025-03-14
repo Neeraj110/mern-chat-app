@@ -30,9 +30,6 @@ const setupSocket = (httpServer) => {
     socket.on("joinConversation", (conversationId) => {
       if (!conversationId) return;
       socket.join(conversationId);
-      console.log(
-        `User ${socket.userId} joined conversation: ${conversationId}`
-      );
     });
 
     socket.on(
@@ -73,7 +70,6 @@ const setupSocket = (httpServer) => {
 
           io.to(conversationId).emit("newMessage", messageData);
         } catch (error) {
-          console.error("Error sending message:", error);
           socket.emit("error", { message: "Failed to send message" });
         }
       }
@@ -89,7 +85,6 @@ const setupSocket = (httpServer) => {
         onlineUsers.delete(socket.userId);
         io.emit("onlineUsers", Array.from(onlineUsers.keys()));
       }
-      console.log("Client disconnected:", socket.id);
     });
   });
 

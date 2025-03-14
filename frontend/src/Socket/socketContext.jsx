@@ -29,13 +29,11 @@ export const SocketProvider = ({ children }) => {
     if (!socket || !user) return;
 
     const handleConnect = () => {
-      console.log("Socket connected");
       setConnectionStatus("connected");
       socket.emit("register", user._id);
     };
 
-    const handleDisconnect = (reason) => {
-      console.log(`Socket disconnected: ${reason}`);
+    const handleDisconnect = () => {
       setConnectionStatus("disconnected");
     };
 

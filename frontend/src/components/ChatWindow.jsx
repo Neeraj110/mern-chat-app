@@ -56,7 +56,6 @@ function ChatWindow({ onClose }) {
 
     const handleNewMessage = (message) => {
       setMessages((prev) => {
-        // Avoid duplicates by checking message ID
         if (prev.some((msg) => msg._id === message._id)) return prev;
         return [...prev, message];
       });
