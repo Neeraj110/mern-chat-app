@@ -187,10 +187,10 @@ function ChatWindow({ onClose }) {
             )
           )}
           {isTyping && <TypingIndicator isTyping={isTyping} />}
-          <div ref={messageEndRef} className="my-[2rem]" />
+          <div ref={messageEndRef} className="my-[2rem]"/>
         </div>
       </div>
-      <div className="p-4 border-t border-gray-200 dark:border-gray-700  bottom-0 w-full bg-white dark:bg-gray-800">
+      <div className="p-4 border-t border-gray-200 dark:border-gray-700 fixed md:left-40 left-0 bottom-0 w-full bg-white dark:bg-gray-800">
         <form
           onSubmit={handleSendMessage}
           className="max-w-2xl md:max-w-3xl mx-auto"
